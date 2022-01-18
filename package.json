@@ -14,10 +14,10 @@
     "fix": "npm run fix:prettier && npm run fix:eslint",
     "fix:prettier": "prettier --write .",
     "fix:eslint": "eslint \"src/**/*.ts\" --fix",
-    "start": "node dist/index.js",
+    "start": "node dist/sysinfo.js",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "watch": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts"
+    "watch": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/sysinfo.ts"
   },
   "repository": {
     "type": "git",
