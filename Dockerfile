@@ -1,5 +1,6 @@
+# stage compilation
 # image de départ
-FROM alpine:3.15
+FROM alpine:3.15 as builder
 
 # chemin de travail
 WORKDIR /projet-cloud
@@ -16,9 +17,16 @@ COPY . .
 # installation des dépendances avec npm
 RUN npm install
 
-#  # build avec npm
+# build avec npm
 RUN npm run build
 
-# exécution
-#  CMD ["npm","run","watch"]
+
+
+# stage exécution
+FROM alpine:3.15 as runner
+
+COPY --from=builder . .
+
+COPY . .
+
 CMD ["npm","run","watch"]
