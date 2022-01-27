@@ -1,0 +1,13 @@
+name: sysinfo actions
+on:
+  push:
+    branches: [ main ]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "install node"
+      - run: apk add --update nodejs npm && apk add --update npm
+      - run: npm install
+      - run: npm build
+      - run: npm run test
