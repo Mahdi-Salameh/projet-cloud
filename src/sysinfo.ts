@@ -60,5 +60,5 @@ const server = http.createServer((req, res) => {
     res.end();
 });
 
-server.listen(8080);
+server.listen(process.env.PORT || 8080);
 
