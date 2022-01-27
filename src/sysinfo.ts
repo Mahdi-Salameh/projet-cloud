@@ -1,8 +1,8 @@
-import * as Si from "systeminformation";
-
+//import * as Si from "systeminformation";
+export const Si = require("systeminformation")
 var http = require('http');
 
-const result = [];
+export const result = [];
 
 Si.cpu().then((data) => {
     result.push({ 'cpu' : data});
