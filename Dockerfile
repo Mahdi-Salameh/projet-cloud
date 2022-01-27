@@ -7,6 +7,7 @@ WORKDIR /projet-cloud
 
 # downgrade des privilèges
 #USER mahdi
+COPY package*.json ./
 
 # installation des paquets système
 RUN apk add --update nodejs npm && apk add --update npm
@@ -25,8 +26,7 @@ RUN npm run build
 # stage exécution
 FROM alpine:3.15 as runner
 
-COPY --from=builder . .
+RUN apk --no-cache add ca-certificates
 
-COPY . .
-
-CMD ["npm","run","watch"]
+COPY --from=builder . ./
+CMD ["node","projet-cloud/dist/sysinfo.js"]
