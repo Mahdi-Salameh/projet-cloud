@@ -1,0 +1,1 @@
+{"version":3,"file":"sysinfo.spec.js","sourceRoot":"","sources":["../src/sysinfo.spec.ts"],"names":[],"mappings":";;AAAA,uCAA+B;AAE/B,QAAQ,CAAC,uBAAuB,EAAE,GAAG,EAAE;IACrC,EAAE,CAAC,qCAAqC,EAAE,GAAG,EAAE;QAC7C,MAAM,CAAC,UAAU,CAAC,CAAC,CAAC,CAAC;QACrB,MAAM,CAAC,YAAE,CAAC,CAAC,cAAc,CAAC,KAAK,CAAC,CAAC;IACnC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC"}
