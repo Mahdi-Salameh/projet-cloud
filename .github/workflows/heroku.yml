@@ -1,5 +1,10 @@
-build:
-  docker:
-    web: Dockerfile
-run:
-  web: bundle exec puma -C config/puma.rb
+name: heroku actions
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    docker:
+      web: Dockerfile
+  run:
+    web: bundle exec puma -C config/puma.rb
