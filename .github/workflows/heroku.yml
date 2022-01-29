@@ -6,5 +6,7 @@ jobs:
   build:
     docker:
       web: Dockerfile
-  run:
+
+  steps:
+  - run:
     web: bundle exec puma -C config/puma.rb
