@@ -12,7 +12,7 @@ const valueObject = {
     currentLoad: '*',
     processes: '*',
     diskLayout: '*',
-    // networkInterfaces: '*'
+    networkInterfaces: '*'
   }
   
 Si.get(valueObject).then(data => result = data);
