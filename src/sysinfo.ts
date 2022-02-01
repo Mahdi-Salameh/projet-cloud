@@ -28,6 +28,7 @@ const server = http.createServer((req, res) => {
         res.write("Page not found (404)\n");
     }
 
+    
     res.end();
 });
 
