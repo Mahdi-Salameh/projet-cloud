@@ -21,12 +21,12 @@ RUN npm install
 # build avec npm
 RUN npm run build
 
-
-
 # stage exécution
 FROM alpine:3.15 as runner
 
+RUN apk add --update nodejs
 RUN apk --no-cache add ca-certificates
 
-COPY --from=builder . ./
-CMD ["node","projet-cloud/dist/sysinfo.js"]
+COPY --from=builder /projet-cloud/dist ./dist
+COPY --from=builder /projet-cloud/node_modules/systeminformation ./node_modules/systeminformation
+CMD ["node","/dist/server.js"]

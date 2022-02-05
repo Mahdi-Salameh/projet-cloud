@@ -1,9 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Si = void 0;
+exports.result = exports.Si = void 0;
 exports.Si = require("systeminformation");
-var http = require('http');
-let result = null;
+exports.result = null;
 const valueObject = {
     cpu: '*',
     system: '*',
@@ -14,17 +13,5 @@ const valueObject = {
     diskLayout: '*',
     networkInterfaces: '*'
 };
-exports.Si.get(valueObject).then(data => result = data);
-const server = http.createServer((req, res) => {
-    if (req.url === '/api/v1/sysinfo') {
-        res.writeHead(200, { 'Content-type': 'application/json' });
-        res.write(JSON.stringify(result));
-    }
-    else {
-        res.writeHead(404, { 'Content-Type': 'text/html' });
-        res.write("Page not found (404)\n");
-    }
-    res.end();
-});
-server.listen(process.env.PORT || 8080);
+exports.Si.get(valueObject).then(data => exports.result = data);
 //# sourceMappingURL=sysinfo.js.map
